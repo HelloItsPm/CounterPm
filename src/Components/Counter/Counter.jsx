@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 // Importe le style CSS du compteur Counter
-import './Counter.css';
+import styles from './style.module.css';
 
 // Le résultat affiché 'count' est au départ à 0 avec useState(0) et il se met à jour avec le set du setCount.
 const Counter = () => {
@@ -74,19 +74,19 @@ const Counter = () => {
 
   // Affichage écran du compteur avec des className pour les modifier avec le CSS.
   return (
-    <div className="counter-container">
-        <div className="counter-container-add">
-            <button className="decrement-button" onClick={soustraction50}><FontAwesomeIcon icon={faMinus} />50</button>
-            <button className="decrement-button" onClick={soustraction10}><FontAwesomeIcon icon={faMinus} />10</button>
-            <button className="decrement-button" onClick={soustraction5}><FontAwesomeIcon icon={faMinus} />5</button>
-            <button className="decrement-button" onClick={soustraction}><FontAwesomeIcon icon={faMinus} /></button>
+    <div className={styles.counterContainer}>
+        <div className={styles.counterContainerAdd}>
+            <button className={styles.decrementButton} onClick={soustraction50}><FontAwesomeIcon icon={faMinus} />50</button>
+            <button className={styles.decrementButton} onClick={soustraction10}><FontAwesomeIcon icon={faMinus} />10</button>
+            <button className={styles.decrementButton} onClick={soustraction5}><FontAwesomeIcon icon={faMinus} />5</button>
+            <button className={styles.decrementButton} onClick={soustraction}><FontAwesomeIcon icon={faMinus} /></button>
             <h1>{count}</h1>
-            <button className="increment-button" onClick={addition}><FontAwesomeIcon icon={faPlus} /></button>
-            <button className="increment-button" onClick={addition5}><FontAwesomeIcon icon={faPlus} />5</button>
-            <button className="increment-button" onClick={addition10}><FontAwesomeIcon icon={faPlus} />10</button>
-            <button className="increment-button" onClick={addition50}><FontAwesomeIcon icon={faPlus} />50</button>
+            <button className={styles.incrementButton} onClick={addition}><FontAwesomeIcon icon={faPlus} /></button>
+            <button className={styles.incrementButton} onClick={addition5}><FontAwesomeIcon icon={faPlus} />5</button>
+            <button className={styles.incrementButton} onClick={addition10}><FontAwesomeIcon icon={faPlus} />10</button>
+            <button className={styles.incrementButton} onClick={addition50}><FontAwesomeIcon icon={faPlus} />50</button>
         </div>
-      <button className="reset-button" onClick={reset}>Remettre à zéro</button>
+      <button className={styles.resetButton} onClick={reset}>Remettre à zéro</button>
     </div>
   );
 };
